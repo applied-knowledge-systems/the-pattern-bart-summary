@@ -1,4 +1,14 @@
+---
+marp: true
+---
+
 # the-pattern-bert-summary
-The extension of The Pattern NLP pipeline with BERT based summary
-This is a highly experimental - mostly collection of what didn't work. 
+The extension of The Pattern NLP pipeline with T5 based summary
+It have two parts:
+
+-  tokenizer_gears_for_sum.py - Redis Gears part running tokenizer on Redis Gears cluster
+-  summary_processor_t5.py - Model runner, can be deployed separately on high GPU instance
+-  both communicate via Redis instance, IP address hardcoded in above change as required
+
+
 
