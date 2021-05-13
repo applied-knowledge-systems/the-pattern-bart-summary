@@ -20,7 +20,7 @@ def main():
     model = T5ForConditionalGeneration.from_pretrained("t5-base")
     model=model.to(device)
     tokenizer = T5Tokenizer.from_pretrained("t5-base")
-    tokens_set=redis_client.smembers("processed_docs_stage3_sum")
+    tokens_set=redis_client.smembers("processed_docs_stage3_queue")
     for t in tokens_set:
         tokens=pickle.loads(redis_client.get(t))
         tens=torch.tensor([tokens]).to(device)
@@ -31,7 +31,7 @@ def main():
         article_id=tail[0]
         redis_client.hset(f"article_id:{article_id}",mapping={'summary': output})
         print(f"Summary build for {article_id} and {output}")
-        redis_client.srem("processed_docs_stage3_sum",t)
+        redis_client.srem("processed_docs_stage3_queue",t)
 
 
 if __name__ == "__main__":
