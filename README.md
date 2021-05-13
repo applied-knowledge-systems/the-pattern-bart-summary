@@ -11,4 +11,8 @@ It have two parts:
 -  both communicate via Redis instance, IP address hardcoded in above change as required
 
 
+# Another way to improve:
+Capture keymiss event on article_id summary on RedisGears and add article into pipeline: tokenizer -> model.
+
+
 
