@@ -16,7 +16,7 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print('Using device:', device)
     print()
-    redis_client=redis.Redis(host='127.0.0.1',port=9001)
+    redis_client=redis.Redis(host='10.144.17.211',port=9001)
     model = T5ForConditionalGeneration.from_pretrained("t5-base")
     model=model.to(device)
     tokenizer = T5Tokenizer.from_pretrained("t5-base")
