@@ -2,7 +2,7 @@
 marp: true
 ---
 
-# the-pattern-bert-summary
+# the-pattern-bart-summary
 The extension of The Pattern NLP pipeline with T5 based summary
 It have two parts:
 
