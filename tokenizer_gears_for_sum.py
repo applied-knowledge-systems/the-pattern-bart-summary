@@ -7,11 +7,10 @@ def connecttoRedis():
     redis_client=redis.Redis(host='redisgraph',port=6379,charset="utf-8", decode_responses=True)
     return redis_client
 
-
 def loadTokeniser():
     global tokenizer
-    from transformers import AutoTokenizer
-    tokenizer = AutoTokenizer.from_pretrained("t5-base")
+    from transformers import T5Tokenizer
+    tokenizer = T5Tokenizer.from_pretrained("t5-base")
     # Try RobertaTokenizerFast and BART
     # tokenizer = AutoTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
     return tokenizer
