@@ -1,1 +1,2 @@
 transformers[sentencepiece]==4.4.2
+sentencepiece==0.1.90
