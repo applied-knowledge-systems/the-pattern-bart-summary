@@ -54,7 +54,7 @@ def parse_sentence(record):
 # gb.count()
 # gb.run('sentence:*')
 from redis.exceptions import ResponseError
-from rediscluster import RedisCluster
+from redis.cluster import RedisCluster
 if __name__ == "__main__":
     startup_nodes = [{"host": "rgcluster", "port": "30001"}, {"host": "rgcluster", "port":"30002"}, {"host":"rgcluster", "port":"30003"}]
     redis_client = RedisCluster(startup_nodes = startup_nodes,decode_responses=True)
